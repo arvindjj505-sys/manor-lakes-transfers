@@ -3,111 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booking Confirmed | Manor Lakes Airport Transfers</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Request Received | Manor Lakes Airport Transfers</title>
+  <meta name="theme-color" content="#060d1a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' fill='%23d9a441' width='100' height='100'/%3E%3Cpath fill='%23060d1a' d='M50 18l16 32h-12v32h-8V50H34z'/%3E%3C/svg%3E">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    body { background: #f8fafc; }
-
-    .navbar { background: #0a1628 !important; padding: 14px 0; }
-    .navbar-brand { color: #fff !important; font-weight: 700; }
-
-    .confirm-card {
-      background: white; border-radius: 16px; padding: 48px 36px;
-      box-shadow: 0 4px 24px rgba(0,0,0,.08); text-align: center;
-      max-width: 520px; margin: 0 auto;
-    }
-
-    .check-circle {
-      width: 80px; height: 80px; background: #27ae60; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 20px; font-size: 2.2em; color: white;
-    }
-
-    .booking-ref {
-      background: #1e3a5f; color: white; font-size: 1.35em; font-weight: 800;
-      padding: 10px 30px; border-radius: 8px; display: inline-block;
-      margin: 10px 0 26px; letter-spacing: 1px;
-    }
-
-    .detail-table { width: 100%; border-collapse: collapse; text-align: left; }
-    .detail-table td { padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
-    .detail-table td:first-child { color: #888; width: 48%; font-size: .92em; }
-    .detail-table td:last-child { font-weight: 600; color: #1e3a5f; }
-    .detail-table .amount-due td { color: #27ae60 !important; }
-
-    .btn-home {
-      background: #1e3a5f; color: white; border: none;
-      padding: 11px 32px; border-radius: 25px; text-decoration: none;
-      display: inline-block; font-weight: 600; margin-top: 6px;
-      transition: background .2s;
-    }
-    .btn-home:hover { background: #0a1628; color: white; }
-
-    footer { background: #0a1628; color: rgba(255,255,255,.55); text-align: center; padding: 20px; margin-top: 50px; font-size: .83em; }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Manor Lakes Airport Transfers</a>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><i class="bi bi-airplane-fill"></i></span>
+      <span class="brand-text">Manor Lakes<small>AIRPORT TRANSFERS</small></span>
+    </a>
   </div>
 </nav>
 
-<div class="container py-5">
+<main class="container">
   <div class="confirm-card">
+    <div class="confirm-check"><i class="bi bi-check-lg"></i></div>
+    <h2>Thanks, <span id="cName">—</span></h2>
+    <p style="color:var(--muted);font-size:.9rem;margin:4px 0 0">Your reference</p>
+    <div class="confirm-ref" id="cRef">—</div>
 
-    <div class="check-circle">&#10004;</div>
-    <h2 class="fw-bold" style="color:#1a5c1a;margin-bottom:6px">Booking Confirmed!</h2>
-    <p class="text-muted mb-1">Thank you, <strong id="customerName">—</strong></p>
-
-    <p class="text-muted mb-0" style="font-size:.88em">Your booking reference:</p>
-    <div class="booking-ref" id="bookingRef">—</div>
-
-    <table class="detail-table mb-4">
-      <tr><td>Pickup Date</td><td id="pickupDate">—</td></tr>
-      <tr><td>Pickup Time</td><td id="pickupTime">—</td></tr>
-      <tr><td>Airport</td><td id="airport">—</td></tr>
-      <tr><td>Passengers</td><td id="passengers">—</td></tr>
-      <tr class="amount-due"><td>Amount Due</td><td>$100.00</td></tr>
-      <tr><td>Payment Method</td><td>Cash / Bank Transfer on the day</td></tr>
+    <table class="confirm-table">
+      <tr><td>Route</td><td id="cRoute">—</td></tr>
+      <tr><td>Date</td><td id="cDate">—</td></tr>
+      <tr><td>Time</td><td id="cTime">—</td></tr>
+      <tr><td>Passengers</td><td id="cPax">—</td></tr>
+      <tr><td>Luggage</td><td id="cLug">—</td></tr>
+      <tr><td>Baby seat</td><td id="cBaby">—</td></tr>
     </table>
 
-    <p class="text-muted mb-2" style="font-size:.88em">
-      A confirmation email has been sent to you.<br>
-      We'll be in touch shortly to confirm your pickup details.
-    </p>
-    <p class="mb-3" style="font-size:.88em">
-      Questions? Call/Text:
-      <a href="tel:0449188872" style="color:#1e3a5f;font-weight:600">0449 188 872</a>
-    </p>
+    <div class="confirm-next">
+      <strong><i class="bi bi-chat-dots"></i> What happens next</strong>
+      We'll text <span id="cPhone">your mobile</span> shortly with your
+      <strong>fixed fare</strong> and pickup confirmation. There's nothing to
+      pay until then. Need to change something? Just reply to our text, or
+      call <a href="tel:0449188872">0449 188 872</a>.
+    </div>
 
-    <a href="index.html" class="btn-home">&#8592; Back to Home</a>
-
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="https://wa.me/61449188872" target="_blank" rel="noopener" class="btn btn-dark">
+        <i class="bi bi-whatsapp"></i> WhatsApp us
+      </a>
+      <a href="index.html" class="btn" style="background:#f1f5f9;color:var(--navy-900)">
+        <i class="bi bi-house"></i> Back to home
+      </a>
+    </div>
   </div>
-</div>
+</main>
 
-<footer>
-  <p class="mb-0">&copy; 2026 Manor Lakes Airport Transfers</p>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:0;margin:0;padding:0">
+      &copy; 2026 Manor Lakes Airport Transfers · Manor Lakes, VIC
+    </div>
+  </div>
 </footer>
 
 <script>
-  const booking = JSON.parse(sessionStorage.getItem('lastBooking') || 'null');
-
-  if (!booking || !booking.bookingRef) {
+  const b = JSON.parse(sessionStorage.getItem('lastBooking') || 'null');
+  if (!b || !b.ref) {
     window.location.href = 'index.html';
   } else {
-    document.getElementById('customerName').textContent = booking.fullName;
-    document.getElementById('bookingRef').textContent   = booking.bookingRef;
-    document.getElementById('pickupDate').textContent   = booking.pickupDate;
-    document.getElementById('pickupTime').textContent   = booking.pickupTime;
-    document.getElementById('airport').textContent      = booking.airport;
-    document.getElementById('passengers').textContent   = booking.passengers;
+    document.getElementById('cName').textContent  = b.fullName;
+    document.getElementById('cRef').textContent   = b.ref;
+    document.getElementById('cRoute').textContent = b.route;
+    document.getElementById('cDate').textContent  = b.displayDate;
+    document.getElementById('cTime').textContent  = b.displayTime;
+    document.getElementById('cPax').textContent   = b.passengers;
+    document.getElementById('cLug').textContent   = b.luggage;
+    document.getElementById('cBaby').textContent  = b.babySeat ? 'Requested' : 'Not required';
+    if (b.phone) document.getElementById('cPhone').textContent = b.phone;
     sessionStorage.removeItem('lastBooking');
   }
 </script>
-
 </body>
 </html>

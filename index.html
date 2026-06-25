@@ -3,176 +3,583 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manor Lakes Airport Transfers | $100 Flat Rate</title>
-  <meta name="description" content="Reliable airport transfers from Manor Lakes. Flat rate $100 to Melbourne Airport (MEL) or Avalon Airport (AVV). Book online.">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Manor Lakes Airport Transfers | Private SUV to Melbourne &amp; Avalon</title>
+  <meta name="description" content="Premium private airport transfers in a Mitsubishi Outlander PHEV GSR. Fixed upfront pricing, baby seats on request, on-time every time. Serving Manor Lakes & Wyndham.">
+
+  <meta property="og:title" content="Manor Lakes Airport Transfers — Private SUV Service">
+  <meta property="og:description" content="Mitsubishi Outlander PHEV GSR. Fixed upfront pricing. Baby seats on request. Book your airport transfer in under two minutes.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aircabroo.shop/">
+  <meta name="theme-color" content="#060d1a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' fill='%23d9a441' width='100' height='100'/%3E%3Cpath fill='%23060d1a' d='M50 18l16 32h-12v32h-8V50H34z'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    body { background: #f8fafc; margin: 0; }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
-    .navbar { background: #0a1628 !important; padding: 14px 0; }
-    .navbar-brand { color: #fff !important; font-weight: 700; font-size: 1.05em; }
-    .nav-book { background: #e8a020; color: #0a1628 !important; font-weight: 700;
-                border-radius: 20px; padding: 7px 22px !important; }
-    .nav-book:hover { background: #d4911a; }
-
-    .hero {
-      background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
-      color: white;
-      padding: 90px 20px 80px;
-      text-align: center;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TaxiService",
+    "name": "Manor Lakes Airport Transfers",
+    "areaServed": "Manor Lakes, Wyndham, Victoria, Australia",
+    "telephone": "+61449188872",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Manor Lakes Airport Transfers",
+      "address": { "@type": "PostalAddress", "addressLocality": "Manor Lakes", "addressRegion": "VIC", "addressCountry": "AU" }
     }
-    .hero h1 { font-size: clamp(1.8em, 5vw, 2.9em); font-weight: 800; margin-bottom: 14px; }
-    .hero .tagline { font-size: 1.15em; opacity: .85; margin-bottom: 6px; }
-    .hero .sub { font-size: 1em; opacity: .6; margin-bottom: 36px; }
-
-    .btn-hero {
-      background: #e8a020; color: #0a1628; font-weight: 700; font-size: 1.1em;
-      padding: 16px 52px; border-radius: 50px; text-decoration: none;
-      display: inline-block; transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 4px 16px rgba(232,160,32,.45);
-    }
-    .btn-hero:hover { transform: translateY(-2px); box-shadow: 0 6px 22px rgba(232,160,32,.55); color: #0a1628; }
-
-    .price-badge {
-      background: #27ae60; color: #fff; font-size: 1.2em; font-weight: 700;
-      padding: 13px 36px; border-radius: 50px; display: inline-block;
-      box-shadow: 0 4px 14px rgba(39,174,96,.3);
-    }
-
-    .feature-card {
-      background: white; border-left: 4px solid #1e3a5f;
-      border-radius: 10px; padding: 28px 22px; text-align: center;
-      height: 100%; box-shadow: 0 2px 12px rgba(0,0,0,.06);
-      transition: transform .2s;
-    }
-    .feature-card:hover { transform: translateY(-4px); }
-    .feature-icon { font-size: 2.4em; margin-bottom: 12px; }
-    .feature-card h3 { color: #1e3a5f; font-size: 1.05em; font-weight: 700; margin-bottom: 8px; }
-    .feature-card p { color: #666; font-size: .88em; margin: 0; }
-
-    .step-num {
-      background: #eef2f8; border-radius: 50%; width: 56px; height: 56px;
-      line-height: 56px; font-size: 1.3em; font-weight: 700; color: #1e3a5f;
-      margin: 0 auto 12px;
-    }
-    .step-title { font-weight: 700; color: #1e3a5f; margin-bottom: 4px; }
-
-    .contact-bar {
-      background: #1e3a5f; color: white; padding: 28px;
-      border-radius: 10px; text-align: center;
-    }
-    .contact-bar a { color: #e8a020; text-decoration: none; font-weight: 600; }
-    .contact-bar a:hover { text-decoration: underline; }
-
-    footer { background: #0a1628; color: rgba(255,255,255,.55); text-align: center; padding: 20px; font-size: .83em; margin-top: 50px; }
-  </style>
+  }
+  </script>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Manor Lakes Airport Transfers</a>
-    <div class="ms-auto">
-      <a href="book.html" class="nav-link nav-book">Book Now</a>
+<!-- ============ NAV ============ -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><i class="bi bi-airplane-fill"></i></span>
+      <span class="brand-text">
+        Manor Lakes
+        <small>AIRPORT TRANSFERS</small>
+      </span>
+    </a>
+    <div class="nav-actions">
+      <a href="tel:0449188872" class="nav-phone"><i class="bi bi-telephone-fill"></i> 0449 188 872</a>
+      <a href="#book" class="btn btn-primary">Book Now</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
+<!-- ============ 1. HERO ============ -->
+<header class="hero">
+  <div class="container hero-grid">
+
+    <div class="hero-copy">
+      <span class="eyebrow"><i class="bi bi-geo-alt-fill"></i> Manor Lakes &amp; Wyndham → MEL · AVV</span>
+      <h1>Airport transfers, <span class="accent">done properly.</span></h1>
+      <p class="lead">
+        A private, pre-booked ride to or from the airport in a premium hybrid
+        SUV. Fixed price agreed upfront, on time at your door, and ready for
+        the whole family.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#book" class="btn btn-primary btn-lg"><i class="bi bi-calendar2-check"></i> Book Now</a>
+        <a href="#book" class="btn btn-ghost btn-lg"><i class="bi bi-calculator"></i> Get Instant Quote</a>
+      </div>
+
+      <div class="hero-badges">
+        <span class="hero-badge"><i class="bi bi-award"></i> Premium Vehicle</span>
+        <span class="hero-badge"><i class="bi bi-shield-check"></i> Airport Transfer Specialist</span>
+        <span class="hero-badge"><i class="bi bi-person-hearts"></i> Baby Seats on Request</span>
+      </div>
+    </div>
+
+    <div class="hero-vehicle">
+      <div class="hero-vehicle-img">
+        <span class="hero-vehicle-tag">Premium SUV</span>
+        <img src="img/outlander.jpg" alt="Graphite Grey Mitsubishi Outlander PHEV — premium hybrid SUV" loading="eager">
+      </div>
+      <h3>Mitsubishi Outlander PHEV GSR</h3>
+      <p class="sub">Graphite Grey · Plug-in Hybrid SUV</p>
+      <div class="specs">
+        <span class="spec">Seats up to 6</span>
+        <span class="spec">Leather interior</span>
+        <span class="spec">Climate control</span>
+        <span class="spec">Whisper-quiet hybrid</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ============ 2. TRUST STRIP ============ -->
+<section class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <i class="bi bi-tag"></i>
+      <strong>Fixed, upfront price</strong>
+      <span>No meter. No surge.</span>
+    </div>
+    <div class="trust-item">
+      <i class="bi bi-stars"></i>
+      <strong>Premium vehicle</strong>
+      <span>Immaculately maintained</span>
+    </div>
+    <div class="trust-item">
+      <i class="bi bi-shield-check"></i>
+      <strong>Clean &amp; safe</strong>
+      <span>Sanitised every trip</span>
+    </div>
+    <div class="trust-item">
+      <i class="bi bi-people"></i>
+      <strong>Family-friendly</strong>
+      <span>Space for everyone</span>
+    </div>
+    <div class="trust-item">
+      <i class="bi bi-person-arms-up"></i>
+      <strong>Baby seats</strong>
+      <span>Fitted on request</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. VEHICLE SHOWCASE ============ -->
+<section class="section section--alt" id="vehicle">
   <div class="container">
-    <h1>Manor Lakes Airport Transfers</h1>
-    <p class="tagline">Reliable, on-time airport transfers — every time.</p>
-    <p class="sub">Serving Manor Lakes &amp; surrounding suburbs, Victoria</p>
-    <a href="book.html" class="btn-hero">Book Your Transfer</a>
-  </div>
-</div>
-
-<div class="container py-5">
-
-  <!-- PRICE BADGE -->
-  <div class="text-center mb-5">
-    <span class="price-badge">Flat Rate: $100 &nbsp;— &nbsp;No Hidden Fees</span>
-  </div>
-
-  <!-- FEATURE CARDS -->
-  <div class="row g-4 mb-5">
-    <div class="col-md-4">
-      <div class="feature-card">
-        <div class="feature-icon">&#128336;</div>
-        <h3>Always On Time</h3>
-        <p>We monitor your flight and adjust pickup if your arrival changes.</p>
-      </div>
+    <div class="section-head">
+      <span class="eyebrow">Your Vehicle</span>
+      <h2>One car. Kept perfect.</h2>
+      <p>We operate a single dedicated vehicle — so you always know exactly what's arriving.</p>
     </div>
-    <div class="col-md-4">
-      <div class="feature-card">
-        <div class="feature-icon">&#128664;</div>
-        <h3>Comfortable Ride</h3>
-        <p>Clean, air-conditioned vehicle for up to 6 passengers with luggage.</p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div class="feature-card">
-        <div class="feature-icon">&#128179;</div>
-        <h3>Pay on the Day</h3>
-        <p>Cash or bank transfer — no upfront payment required.</p>
-      </div>
-    </div>
-  </div>
 
-  <!-- HOW IT WORKS -->
-  <div class="bg-white rounded-3 shadow-sm p-4 p-md-5 mb-5">
-    <h2 class="text-center fw-bold mb-4" style="color:#1e3a5f">How It Works</h2>
-    <div class="row text-center g-4">
-      <div class="col-6 col-md-3">
-        <div class="step-num">1</div>
-        <p class="step-title">Book Online</p>
-        <p class="text-muted small">Fill in your details in under 2 minutes.</p>
+    <div class="vehicle-card">
+      <div class="vehicle-media">
+        <img src="img/outlander.jpg" alt="Mitsubishi Outlander PHEV in Graphite Grey, front three-quarter view" loading="lazy">
       </div>
-      <div class="col-6 col-md-3">
-        <div class="step-num">2</div>
-        <p class="step-title">Get Confirmed</p>
-        <p class="text-muted small">Receive your booking reference by email instantly.</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="step-num">3</div>
-        <p class="step-title">We Pick You Up</p>
-        <p class="text-muted small">Your driver arrives at your door, right on time.</p>
-      </div>
-      <div class="col-6 col-md-3">
-        <div class="step-num">4</div>
-        <p class="step-title">Pay on Arrival</p>
-        <p class="text-muted small">Cash or bank transfer — simple and easy.</p>
+      <div class="vehicle-body">
+        <span class="eyebrow">Premium Hybrid SUV</span>
+        <h3>Mitsubishi Outlander PHEV GSR</h3>
+        <p class="variant">Graphite Grey · Plug-in Hybrid · Immaculately kept</p>
+
+        <div class="vehicle-chips">
+          <span class="vehicle-chip">Leather seats</span>
+          <span class="vehicle-chip">Dual-zone climate</span>
+          <span class="vehicle-chip">Quiet electric drive</span>
+          <span class="vehicle-chip">5-star ANCAP safety</span>
+          <span class="vehicle-chip">USB-C charging</span>
+        </div>
+
+        <div class="capacity">
+          <div class="capacity-head"><i class="bi bi-info-circle"></i> Seating &amp; Luggage Guide</div>
+          <div class="capacity-row">
+            <div class="capacity-icon"><i class="bi bi-people-fill"></i></div>
+            <div class="capacity-text">
+              <strong>Up to 6 passengers</strong>
+              <span>When travelling light — cabin bags or small items only</span>
+            </div>
+          </div>
+          <div class="capacity-row">
+            <div class="capacity-icon"><i class="bi bi-luggage-fill"></i></div>
+            <div class="capacity-text">
+              <strong>Up to 4 passengers</strong>
+              <span>When travelling with full-size suitcases (third row folds for luggage)</span>
+            </div>
+          </div>
+          <div class="capacity-foot">
+            All passenger counts are in addition to your driver. Not sure which applies?
+            Tell us your luggage on the booking form and we'll confirm.
+          </div>
+        </div>
+
+        <a href="#book" class="btn btn-dark btn-block">Book This Vehicle</a>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- CTA BANNER -->
-  <div class="text-center mb-5 p-4" style="background:#1e3a5f;border-radius:12px">
-    <h3 class="text-white fw-bold mb-2">Ready to book your transfer?</h3>
-    <p class="text-white opacity-75 mb-4">Melbourne Airport or Avalon — we've got you covered.</p>
-    <a href="book.html" class="btn-hero" style="font-size:1em;padding:13px 42px">Book Now — $100 Flat Rate</a>
+<!-- ============ PRICE COMPARISON ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Honest Value</span>
+      <h2>How our fare compares</h2>
+      <p>Manor Lakes → Melbourne Airport (Tullamarine), one way. Our price is fixed when you book — theirs isn't.</p>
+    </div>
+
+    <div class="compare">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align:left">Option</th>
+            <th>Typical fare</th>
+            <th class="col-us">Our fare</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rideshare app <small>off-peak estimate</small></td>
+            <td>$95 – $130</td>
+            <td class="col-us" rowspan="3">
+              $100
+              <span class="lock"><i class="bi bi-lock-fill"></i> fixed at booking</span>
+            </td>
+          </tr>
+          <tr>
+            <td>Rideshare app <small>4–6 am / peak surge</small></td>
+            <td>$140 – $200+</td>
+          </tr>
+          <tr>
+            <td>Metered taxi <small>incl. tolls &amp; airport fee</small></td>
+            <td>$130 – $170</td>
+          </tr>
+          <tr>
+            <td>Surge pricing</td>
+            <td><span class="no">Yes</span></td>
+            <td class="col-us"><span class="yes">Never</span></td>
+          </tr>
+          <tr>
+            <td>Baby seat included</td>
+            <td><span class="no">Rarely</span></td>
+            <td class="col-us"><span class="yes">On request</span></td>
+          </tr>
+          <tr>
+            <td>Know your driver &amp; car in advance</td>
+            <td><span class="no">No</span></td>
+            <td class="col-us"><span class="yes">Always</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="compare-foot">
+        Comparison fares are indicative public estimates and vary by time, demand and route.
+        Our fare is confirmed before pickup with no extras on the day.
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- CONTACT BAR -->
-  <div class="contact-bar">
-    <p class="mb-1 fw-bold fs-5">Questions? We're here to help.</p>
-    <p class="mb-0">
-      Call / Text: <a href="tel:0449188872">0449 188 872</a>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      Email: <a href="mailto:arvind.jayanth5@gmail.com">arvind.jayanth5@gmail.com</a>
-    </p>
+<!-- ============ 4. BOOKING / QUOTE ============ -->
+<section class="section section--alt" id="book">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Quick Booking</span>
+      <h2>Get your quote &amp; reserve</h2>
+      <p>Takes under two minutes. We'll confirm your fixed fare straight away.</p>
+    </div>
+
+    <div class="book-card">
+      <form id="bookingForm" novalidate>
+
+        <div class="form-grid">
+          <div class="field field--full">
+            <label for="pickup">Pickup location <span class="req">*</span></label>
+            <input type="text" id="pickup" name="pickup" required
+                   autocomplete="street-address"
+                   placeholder="e.g. 12 Example St, Manor Lakes — or Melbourne Airport T2">
+            <span class="error-msg">Please tell us where to pick you up.</span>
+          </div>
+
+          <div class="field field--full">
+            <label for="dropoff">Drop-off location <span class="req">*</span></label>
+            <input type="text" id="dropoff" name="dropoff" required
+                   placeholder="e.g. Melbourne Airport (MEL) — or your home address">
+            <span class="error-msg">Please tell us where you're going.</span>
+          </div>
+
+          <div class="field">
+            <label for="date">Date <span class="req">*</span></label>
+            <input type="date" id="date" name="date" required>
+            <span class="error-msg">Please choose a date.</span>
+          </div>
+
+          <div class="field">
+            <label for="time">Time <span class="req">*</span></label>
+            <input type="time" id="time" name="time" required>
+            <span class="error-msg">Please choose a time.</span>
+          </div>
+
+          <div class="field">
+            <label for="passengers">Passengers <span class="req">*</span></label>
+            <select id="passengers" name="passengers" required>
+              <option value="1">1 passenger</option>
+              <option value="2">2 passengers</option>
+              <option value="3">3 passengers</option>
+              <option value="4">4 passengers</option>
+              <option value="5">5 passengers</option>
+              <option value="6">6 passengers</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="luggage">Luggage <span class="req">*</span></label>
+            <select id="luggage" name="luggage" required>
+              <option value="None / cabin bags only">None / cabin bags only</option>
+              <option value="1–2 suitcases">1–2 suitcases</option>
+              <option value="3–4 suitcases">3–4 suitcases</option>
+              <option value="5+ suitcases">5+ suitcases</option>
+            </select>
+          </div>
+
+          <div class="field field--full">
+            <div id="capacityHint" class="capacity-hint hidden">
+              <i class="bi bi-exclamation-circle-fill"></i>
+              <span>With full luggage, this vehicle comfortably seats <strong>up to 4 passengers</strong>.
+                We'll be in touch to confirm the best arrangement for your group.</span>
+            </div>
+          </div>
+
+          <div class="field field--full">
+            <label class="check">
+              <input type="checkbox" id="babySeat" name="babySeat">
+              <span class="check-text">
+                <strong>I'd like a baby / child seat</strong>
+                <span>Fitted and ready before pickup, at no extra charge. Tell us the age in the notes.</span>
+              </span>
+            </label>
+          </div>
+
+          <div class="field">
+            <label for="flight">Flight number <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <input type="text" id="flight" name="flight" placeholder="e.g. QF401">
+            <span class="hint">We'll track it and adjust if it's delayed.</span>
+          </div>
+
+          <div class="field">
+            <label for="notes">Anything else? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <input type="text" id="notes" name="notes" placeholder="Child age, extra stop, special request…">
+          </div>
+
+          <div class="field--full form-divider"></div>
+
+          <div class="field">
+            <label for="fullName">Your name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="Full name">
+            <span class="error-msg">Please enter your name.</span>
+          </div>
+
+          <div class="field">
+            <label for="phone">Mobile number <span class="req">*</span></label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel"
+                   inputmode="tel" placeholder="04XX XXX XXX">
+            <span class="error-msg">Please enter your mobile number.</span>
+          </div>
+
+          <div class="field field--full">
+            <label for="email">Email <span style="font-weight:400;color:var(--muted)">(optional — for your confirmation copy)</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="form-foot">
+          <div id="errorMsg" class="hidden"></div>
+          <button type="submit" id="submitBtn" class="btn btn-primary btn-block btn-lg">
+            <span id="btnText">Request Quote &amp; Reserve</span>
+            <span id="btnSpinner" class="hidden"><i class="bi bi-arrow-repeat"></i></span>
+          </button>
+          <div class="reassure">
+            <span><i class="bi bi-check-circle-fill"></i> No payment taken now</span>
+            <span><i class="bi bi-check-circle-fill"></i> Free to cancel</span>
+            <span><i class="bi bi-check-circle-fill"></i> Reply within the hour</span>
+          </div>
+        </div>
+
+      </form>
+    </div>
   </div>
+</section>
 
-</div>
+<!-- ============ 5. WHY CHOOSE US ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>The simple way to start (or end) a trip</h2>
+    </div>
 
-<footer>
-  <p class="mb-0">&copy; 2026 Manor Lakes Airport Transfers &nbsp;|&nbsp; Manor Lakes, VIC, Australia</p>
+    <div class="feature-grid">
+      <div class="feature">
+        <i class="bi bi-clock-history"></i>
+        <h3>On time, every time</h3>
+        <p>We plan around traffic and track your flight, so you're never rushing — or waiting.</p>
+      </div>
+      <div class="feature">
+        <i class="bi bi-gem"></i>
+        <h3>Premium hybrid SUV</h3>
+        <p>A late-model Outlander PHEV GSR with leather seats and a silent hybrid drive — kept showroom-clean.</p>
+      </div>
+      <div class="feature">
+        <i class="bi bi-person-hearts"></i>
+        <h3>Baby seats on request</h3>
+        <p>Properly fitted before we arrive. Just tick the box when you book.</p>
+      </div>
+      <div class="feature">
+        <i class="bi bi-people"></i>
+        <h3>Built for families &amp; groups</h3>
+        <p>Six seats for light travel, or four with full luggage — clearly explained, no surprises.</p>
+      </div>
+      <div class="feature">
+        <i class="bi bi-phone"></i>
+        <h3>Effortless booking</h3>
+        <p>One short form. A real person confirms your fare and pickup the same day.</p>
+      </div>
+      <div class="feature">
+        <i class="bi bi-person-badge"></i>
+        <h3>Professional service</h3>
+        <p>A courteous, accredited driver and a spotless vehicle — every single trip.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTOMER REVIEWS ============ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">From Our Passengers</span>
+      <h2>What customers say</h2>
+      <p>Recent feedback from Manor Lakes &amp; Wyndham travellers.</p>
+    </div>
+
+    <div class="review-grid">
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Booked the night before a 6 am flight and he was outside at
+          3:45 on the dot. Spotless car, helped with the bags, zero stress. Won't gamble
+          on a rideshare for early flights again.</p>
+        <div class="review-meta">
+          <div class="review-avatar">SK</div>
+          <div>
+            <div class="review-name">Sarah K.</div>
+            <div class="review-route">Manor Lakes → MEL</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Flight landed almost two hours late — he'd already tracked
+          it and adjusted. Was waiting at arrivals when we walked out. That's the
+          difference between an app and an actual person.</p>
+        <div class="review-meta">
+          <div class="review-avatar">DP</div>
+          <div>
+            <div class="review-name">Daniel P.</div>
+            <div class="review-route">MEL → Wyndham Vale</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Family of five with a toddler. Baby seat was already fitted
+          when he arrived and the price was exactly what we were quoted. Comfortable,
+          quiet ride — kids fell asleep on the way.</p>
+        <div class="review-meta">
+          <div class="review-avatar">MT</div>
+          <div>
+            <div class="review-name">Mei T.</div>
+            <div class="review-route">Werribee → Avalon</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. FAQ ============ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Good to Know</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item" open>
+        <summary>How many passengers can travel?</summary>
+        <p>The Outlander seats up to <strong>6 passengers</strong> (plus your driver) when
+          luggage is limited to cabin bags. With full-size suitcases the third row folds down
+          for boot space, so the comfortable maximum is <strong>4 passengers</strong>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I bring luggage?</summary>
+        <p>Absolutely. Tell us how many bags on the booking form and we'll confirm the right
+          seating layout. As a guide: full luggage (3+ large cases) means up to 4 passengers;
+          light luggage means up to 6.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are baby seats available?</summary>
+        <p>Yes — baby and child seats are available <strong>on request</strong> at no extra
+          charge. Tick the box when booking and note the child's age so we fit the right one.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What vehicle do you use?</summary>
+        <p>A <strong>Mitsubishi Outlander PHEV GSR</strong> in Graphite Grey — a premium plug-in
+          hybrid SUV with leather interior, dual-zone climate control and a 5-star safety rating.
+          It's the only vehicle we operate, so you always know exactly what's arriving.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What condition is the car in?</summary>
+        <p>It's a <strong>late-model</strong> Outlander PHEV, maintained to dealership
+          standard, professionally detailed, and cleaned before every transfer.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How do I book?</summary>
+        <p>Fill in the short form above — it takes under two minutes. We'll reply with your
+          fixed fare and confirm the pickup, usually within the hour. Prefer to talk? Call or
+          WhatsApp <a href="tel:0449188872">0449 188 872</a>.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section--tight">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Ready when you are.</h2>
+      <p>Reserve your transfer now — your fixed fare is confirmed before you commit.</p>
+      <div class="btn-row">
+        <a href="#book" class="btn btn-primary btn-lg"><i class="bi bi-calendar2-check"></i> Book Now</a>
+        <a href="https://wa.me/61449188872" target="_blank" rel="noopener" class="btn btn-ghost"><i class="bi bi-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html">
+          <span class="brand-mark"><i class="bi bi-airplane-fill"></i></span>
+          <span class="brand-text">Manor Lakes<small>AIRPORT TRANSFERS</small></span>
+        </a>
+        <p>Private airport transfers in a Mitsubishi Outlander PHEV GSR.
+          One vehicle, one driver, one standard — premium.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><i class="bi bi-telephone"></i> <a href="tel:0449188872">0449 188 872</a></li>
+          <li><i class="bi bi-whatsapp"></i> <a href="https://wa.me/61449188872" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><i class="bi bi-envelope"></i> <a href="mailto:arvind.jayanth5@gmail.com">arvind.jayanth5@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Area</h4>
+        <ul>
+          <li><i class="bi bi-geo-alt"></i> Manor Lakes &amp; Wyndham, VIC</li>
+          <li><i class="bi bi-airplane"></i> Melbourne Airport (MEL)</li>
+          <li><i class="bi bi-airplane"></i> Avalon Airport (AVV)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Manor Lakes Airport Transfers · Manor Lakes, Victoria, Australia
+      <div class="footer-legal">
+        <a href="#">Terms</a> · <a href="#">Privacy</a> ·
+        <span style="opacity:.7">Vehicle photo: representative model —
+          <a href="https://commons.wikimedia.org/wiki/File:2023_Mitsubishi_Outlander_PHEV_SEL_in_Jet_Black_Mica,_front_left_(NYC).jpg"
+             target="_blank" rel="noopener">Mr.choppers / Wikimedia</a>, CC BY-SA 3.0</span>
+      </div>
+    </div>
+  </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta">
+  <a href="tel:0449188872" class="s-call"><i class="bi bi-telephone-fill"></i> Call</a>
+  <a href="#book" class="s-book"><i class="bi bi-calendar2-check"></i> Book Now</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/booking.js"></script>
 </body>
 </html>

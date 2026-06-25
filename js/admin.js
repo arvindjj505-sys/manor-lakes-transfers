@@ -3,13 +3,7 @@ const supabaseAdmin = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.S
 const STATUS_OPTIONS = ['NEW', 'CONFIRMED', 'COMPLETED', 'CANCELLED'];
 
 function statusBadge(status) {
-    const map = {
-        NEW:       'status-new',
-        CONFIRMED: 'status-confirmed',
-        COMPLETED: 'status-completed',
-        CANCELLED: 'status-cancelled'
-    };
-    return `<span class="status-badge ${map[status] || 'status-new'}">${status}</span>`;
+    return `<span class="status-badge status-${status}">${status}</span>`;
 }
 
 function statusDropdown(id, current) {
@@ -98,6 +92,7 @@ async function loadBookings() {
           <td style="font-size:.8em">${b.airport}</td>
           <td class="text-center">${b.passengers}</td>
           <td style="font-size:.8em">${b.flight_number || '—'}</td>
+          <td style="font-size:.78em;max-width:260px;white-space:normal">${b.notes || '—'}</td>
           <td>${statusBadge(b.status)}</td>
           <td>${statusDropdown(b.id, b.status)}</td>
         </tr>`;

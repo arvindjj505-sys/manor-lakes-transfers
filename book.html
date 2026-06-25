@@ -3,171 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Book a Transfer | Manor Lakes Airport Transfers</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Book Your Transfer | Manor Lakes Airport Transfers</title>
+  <meta name="theme-color" content="#060d1a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect rx='20' fill='%23d9a441' width='100' height='100'/%3E%3Cpath fill='%23060d1a' d='M50 18l16 32h-12v32h-8V50H34z'/%3E%3C/svg%3E">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { font-family: 'Inter', sans-serif; }
-    body { background: #f8fafc; }
-
-    .navbar { background: #0a1628 !important; padding: 14px 0; }
-    .navbar-brand { color: #fff !important; font-weight: 700; }
-
-    .page-header {
-      background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
-      color: white; padding: 44px 20px; text-align: center;
-    }
-    .page-header h1 { font-size: 1.8em; font-weight: 800; margin-bottom: 6px; }
-
-    .form-card {
-      background: white; border-radius: 12px; padding: 36px;
-      box-shadow: 0 4px 20px rgba(0,0,0,.08);
-    }
-    .form-label { font-weight: 600; color: #374151; }
-    .form-control:focus, .form-select:focus {
-      border-color: #1e3a5f;
-      box-shadow: 0 0 0 3px rgba(30,58,95,.15);
-    }
-    .section-title { color: #1e3a5f; font-weight: 700; font-size: 1.05em; margin-bottom: 16px; }
-    .required-mark { color: #dc2626; }
-
-    .price-note {
-      background: #f0fdf4; border: 1px solid #86efac;
-      border-radius: 8px; padding: 13px 18px; color: #166534; font-weight: 600;
-    }
-
-    .btn-submit {
-      background: #1e3a5f; color: white; border: none;
-      padding: 14px 40px; font-size: 1.05em; font-weight: 700;
-      border-radius: 50px; width: 100%; transition: background .2s;
-    }
-    .btn-submit:hover { background: #0a1628; color: white; }
-    .btn-submit:disabled { opacity: .65; cursor: not-allowed; }
-
-    #loadingSpinner { display: none; }
-
-    footer { background: #0a1628; color: rgba(255,255,255,.55); text-align: center; padding: 20px; margin-top: 50px; font-size: .83em; }
-  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Manor Lakes Airport Transfers</a>
-    <div class="ms-auto">
-      <a href="index.html" class="btn btn-outline-light btn-sm">&#8592; Home</a>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark"><i class="bi bi-airplane-fill"></i></span>
+      <span class="brand-text">Manor Lakes<small>AIRPORT TRANSFERS</small></span>
+    </a>
+    <div class="nav-actions">
+      <a href="index.html" class="btn btn-ghost" style="border-color:rgba(255,255,255,.22)">
+        <i class="bi bi-arrow-left"></i> Home
+      </a>
     </div>
   </div>
 </nav>
 
-<div class="page-header">
-  <h1>Book Your Airport Transfer</h1>
-  <p class="mb-0" style="opacity:.8">Fill in your details — we'll confirm shortly</p>
-</div>
+<section class="section" style="padding-top:36px">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Quick Booking</span>
+      <h2>Book your airport transfer</h2>
+      <p>Mitsubishi Outlander PHEV GSR · Fixed upfront fare · Baby seats on request</p>
+    </div>
 
-<div class="container py-5" style="max-width:680px">
+    <div class="book-card">
+      <form id="bookingForm" novalidate>
+        <div class="form-grid">
+          <div class="field field--full">
+            <label for="pickup">Pickup location <span class="req">*</span></label>
+            <input type="text" id="pickup" required autocomplete="street-address"
+                   placeholder="e.g. 12 Example St, Manor Lakes — or Melbourne Airport T2">
+            <span class="error-msg">Please tell us where to pick you up.</span>
+          </div>
+          <div class="field field--full">
+            <label for="dropoff">Drop-off location <span class="req">*</span></label>
+            <input type="text" id="dropoff" required
+                   placeholder="e.g. Melbourne Airport (MEL) — or your home address">
+            <span class="error-msg">Please tell us where you're going.</span>
+          </div>
+          <div class="field">
+            <label for="date">Date <span class="req">*</span></label>
+            <input type="date" id="date" required>
+            <span class="error-msg">Please choose a date.</span>
+          </div>
+          <div class="field">
+            <label for="time">Time <span class="req">*</span></label>
+            <input type="time" id="time" required>
+            <span class="error-msg">Please choose a time.</span>
+          </div>
+          <div class="field">
+            <label for="passengers">Passengers <span class="req">*</span></label>
+            <select id="passengers" required>
+              <option value="1">1 passenger</option><option value="2">2 passengers</option>
+              <option value="3">3 passengers</option><option value="4">4 passengers</option>
+              <option value="5">5 passengers</option><option value="6">6 passengers</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="luggage">Luggage <span class="req">*</span></label>
+            <select id="luggage" required>
+              <option value="None / cabin bags only">None / cabin bags only</option>
+              <option value="1–2 suitcases">1–2 suitcases</option>
+              <option value="3–4 suitcases">3–4 suitcases</option>
+              <option value="5+ suitcases">5+ suitcases</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <div id="capacityHint" class="capacity-hint hidden">
+              <i class="bi bi-exclamation-circle-fill"></i>
+              <span>With full luggage, this vehicle comfortably seats <strong>up to 4 passengers</strong>.
+                We'll be in touch to confirm the best arrangement for your group.</span>
+            </div>
+          </div>
+          <div class="field field--full">
+            <label class="check">
+              <input type="checkbox" id="babySeat">
+              <span class="check-text">
+                <strong>I'd like a baby / child seat</strong>
+                <span>Fitted and ready before pickup, at no extra charge.</span>
+              </span>
+            </label>
+          </div>
+          <div class="field">
+            <label for="flight">Flight number <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <input type="text" id="flight" placeholder="e.g. QF401">
+          </div>
+          <div class="field">
+            <label for="notes">Anything else? <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <input type="text" id="notes" placeholder="Child age, extra stop…">
+          </div>
+          <div class="field--full form-divider"></div>
+          <div class="field">
+            <label for="fullName">Your name <span class="req">*</span></label>
+            <input type="text" id="fullName" required autocomplete="name" placeholder="Full name">
+            <span class="error-msg">Please enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="phone">Mobile number <span class="req">*</span></label>
+            <input type="tel" id="phone" required autocomplete="tel" inputmode="tel" placeholder="04XX XXX XXX">
+            <span class="error-msg">Please enter your mobile number.</span>
+          </div>
+          <div class="field field--full">
+            <label for="email">Email <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <input type="email" id="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+        </div>
 
-  <div class="price-note text-center mb-4">
-    Flat Rate: $100 &nbsp;|&nbsp; Pay on the day &nbsp;|&nbsp; Cash or Bank Transfer
+        <div class="form-foot">
+          <div id="errorMsg" class="hidden"></div>
+          <button type="submit" id="submitBtn" class="btn btn-primary btn-block btn-lg">
+            <span id="btnText">Request Quote &amp; Reserve</span>
+            <span id="btnSpinner" class="hidden"><i class="bi bi-arrow-repeat"></i></span>
+          </button>
+          <div class="reassure">
+            <span><i class="bi bi-check-circle-fill"></i> No payment taken now</span>
+            <span><i class="bi bi-check-circle-fill"></i> Free to cancel</span>
+            <span><i class="bi bi-check-circle-fill"></i> Reply within the hour</span>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
+</section>
 
-  <div class="form-card">
-    <form id="bookingForm" novalidate>
-
-      <h5 class="section-title">Your Details</h5>
-
-      <div class="mb-3">
-        <label class="form-label">Full Name <span class="required-mark">*</span></label>
-        <input type="text" class="form-control" id="fullName" placeholder="John Smith" required>
-        <div class="invalid-feedback">Please enter your full name.</div>
-      </div>
-
-      <div class="row g-3 mb-3">
-        <div class="col-md-6">
-          <label class="form-label">Phone Number <span class="required-mark">*</span></label>
-          <input type="tel" class="form-control" id="phone" placeholder="04XX XXX XXX" required>
-          <div class="invalid-feedback">Please enter your phone number.</div>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Email Address <span class="required-mark">*</span></label>
-          <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
-          <div class="invalid-feedback">Please enter a valid email address.</div>
-        </div>
-      </div>
-
-      <hr class="my-4">
-      <h5 class="section-title">Transfer Details</h5>
-
-      <div class="row g-3 mb-3">
-        <div class="col-md-6">
-          <label class="form-label">Pickup Date <span class="required-mark">*</span></label>
-          <input type="date" class="form-control" id="pickupDate" required>
-          <div class="invalid-feedback">Please select a pickup date.</div>
-        </div>
-        <div class="col-md-6">
-          <label class="form-label">Pickup Time <span class="required-mark">*</span></label>
-          <input type="time" class="form-control" id="pickupTime" required>
-          <div class="invalid-feedback">Please select a pickup time.</div>
-        </div>
-      </div>
-
-      <div class="row g-3 mb-3">
-        <div class="col-md-8">
-          <label class="form-label">Destination Airport <span class="required-mark">*</span></label>
-          <select class="form-select" id="airport" required>
-            <option value="">Select airport...</option>
-            <option value="Melbourne Airport (MEL) — Tullamarine">Melbourne Airport (MEL) — Tullamarine</option>
-            <option value="Avalon Airport (AVV)">Avalon Airport (AVV)</option>
-          </select>
-          <div class="invalid-feedback">Please select an airport.</div>
-        </div>
-        <div class="col-md-4">
-          <label class="form-label">Passengers <span class="required-mark">*</span></label>
-          <select class="form-select" id="passengers">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="mb-3">
-        <label class="form-label">Flight Number <span class="text-muted fw-normal">(optional)</span></label>
-        <input type="text" class="form-control" id="flightNumber" placeholder="e.g. QF401">
-        <div class="form-text">Helps us monitor your arrival time.</div>
-      </div>
-
-      <div class="mb-4">
-        <label class="form-label">Special Requests <span class="text-muted fw-normal">(optional)</span></label>
-        <textarea class="form-control" id="notes" rows="3"
-          placeholder="e.g. extra luggage, wheelchair access, child seat..."></textarea>
-      </div>
-
-      <div id="errorMsg" class="alert alert-danger d-none"></div>
-
-      <button type="submit" class="btn-submit" id="submitBtn">
-        <span id="btnText">Confirm Booking</span>
-        <span id="loadingSpinner" class="spinner-border spinner-border-sm ms-2" role="status"
-              aria-hidden="true"></span>
-      </button>
-
-    </form>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border:0;margin:0;padding:0">
+      &copy; 2026 Manor Lakes Airport Transfers · Manor Lakes, VIC ·
+      <a href="tel:0449188872">0449 188 872</a>
+    </div>
   </div>
-
-  <p class="text-center text-muted mt-3" style="font-size:.85em">
-    Questions? Call or text <a href="tel:0449188872" style="color:#1e3a5f;font-weight:600">0449 188 872</a>
-  </p>
-
-</div>
-
-<footer>
-  <p class="mb-0">&copy; 2026 Manor Lakes Airport Transfers</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="js/config.js"></script>
