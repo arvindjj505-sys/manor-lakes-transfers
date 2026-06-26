@@ -6,5 +6,6 @@ const CONFIG = {
     EMAILJS_CUSTOMER_TEMPLATE_ID: 'template_cop9srh',
     EMAILJS_ADMIN_TEMPLATE_ID:    'template_212xi9f',
     ADMIN_EMAIL:         'arvind.jayanth5@gmail.com',
-    BUSINESS_PHONE:      '0449 188 872'
+    BUSINESS_PHONE:      '0449 188 872',
+    RECAPTCHA_SITE_KEY:  '6LcvkDUtAAAAAL-Ehz0HmN0MUVV_u0FcDpWe81At'
 };

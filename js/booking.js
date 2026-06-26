@@ -34,6 +34,22 @@ function fmtTime(t) {
   return `${hr % 12 || 12}:${m} ${ap}`;
 }
 
+/* reCAPTCHA v3 — frontend-only token, no server to verify it against.
+   Fails open (resolves '') on ad-blockers, load failures, or timeout
+   so a real booking is never blocked by it. */
+function getRecaptchaToken() {
+  if (typeof grecaptcha === 'undefined') return Promise.resolve('');
+  const exec = new Promise(resolve => {
+    grecaptcha.ready(() => {
+      grecaptcha.execute(CONFIG.RECAPTCHA_SITE_KEY, { action: 'booking' })
+        .then(resolve)
+        .catch(() => resolve(''));
+    });
+  });
+  const timeout = new Promise(resolve => setTimeout(() => resolve(''), 5000));
+  return Promise.race([exec, timeout]);
+}
+
 /* ---------- wiring ---------- */
 $('date').min = todayISO();
 
@@ -101,6 +117,8 @@ $('bookingForm').addEventListener('submit', async e => {
     document.querySelector('.field--error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
+
+  $('g-recaptcha-response').value = await getRecaptchaToken();
 
   const pickup       = $('pickup').value.trim();
   const dropoff      = $('dropoff').value.trim();
