@@ -34,25 +34,31 @@ function fmtTime(t) {
   return `${hr % 12 || 12}:${m} ${ap}`;
 }
 
-function isHeavyLuggage(v) {
-  return v === '3–4 suitcases' || v === '5+ suitcases';
-}
-
 /* ---------- wiring ---------- */
 $('date').min = todayISO();
 
-function checkCapacity() {
-  const pax = parseInt($('passengers').value, 10);
-  const heavy = isHeavyLuggage($('luggage').value);
-  // 6 passengers max (light luggage); 4 max with full luggage. Driver not counted.
-  $('capacityHint').classList.toggle('hidden', !(heavy && pax > 4));
+/* Vehicle limits: 4 passengers max (driver not counted), 4 standard suitcases max. */
+function updateWarnings() {
+  const paxVal = $('passengers').value;
+  const pax = parseInt(paxVal, 10);
+  const luggageOver = $('luggage').value === '5+ bags';
+  const luggageCount = parseInt($('luggage').value, 10);
+  const babySeat = $('babySeat').checked;
+
+  $('passengerWarning').classList.toggle('hidden', !(paxVal !== '' && pax > 4));
+  $('babySeatWarning').classList.toggle('hidden', !(babySeat && paxVal === ''));
+  $('luggageWarning').classList.toggle('hidden', !luggageOver);
+
+  const fullCapacity = pax === 4 && babySeat && !luggageOver && luggageCount >= 3;
+  $('fullCapacityNotice').classList.toggle('hidden', !fullCapacity);
 }
-$('passengers').addEventListener('change', checkCapacity);
-$('luggage').addEventListener('change', checkCapacity);
-checkCapacity();
+$('passengers').addEventListener('change', updateWarnings);
+$('luggage').addEventListener('change', updateWarnings);
+$('babySeat').addEventListener('change', updateWarnings);
+updateWarnings();
 
 /* ---------- validation ---------- */
-const REQUIRED = ['pickup', 'dropoff', 'date', 'time', 'fullName', 'phone'];
+const REQUIRED = ['pickup', 'dropoff', 'date', 'time', 'passengers', 'fullName', 'phone'];
 
 function validate() {
   let ok = true;
@@ -63,33 +69,52 @@ function validate() {
     field.classList.toggle('field--error', !valid);
     if (!valid) ok = false;
   });
+
+  if (parseInt($('passengers').value, 10) > 4) {
+    $('passengers').closest('.field').classList.add('field--error');
+    ok = false;
+  }
+
+  if ($('luggage').value === '5+ bags') {
+    $('luggage').closest('.field').classList.add('field--error');
+    ok = false;
+  }
+
   return ok;
 }
 
-REQUIRED.forEach(id =>
-  $(id).addEventListener('input', () =>
-    $(id).closest('.field').classList.remove('field--error')));
+REQUIRED.forEach(id => {
+  const clear = () => $(id).closest('.field').classList.remove('field--error');
+  $(id).addEventListener('input', clear);
+  $(id).addEventListener('change', clear);
+});
+
+$('luggage').addEventListener('change', () => {
+  if ($('luggage').value !== '5+ bags') $('luggage').closest('.field').classList.remove('field--error');
+});
 
 /* ---------- submit ---------- */
 $('bookingForm').addEventListener('submit', async e => {
   e.preventDefault();
+  updateWarnings();
   if (!validate()) {
     document.querySelector('.field--error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
 
-  const pickup     = $('pickup').value.trim();
-  const dropoff    = $('dropoff').value.trim();
-  const dateISO    = $('date').value;
-  const timeRaw    = $('time').value;
-  const passengers = $('passengers').value;
-  const luggage    = $('luggage').value;
-  const babySeat   = $('babySeat').checked;
-  const flight     = $('flight').value.trim();
-  const userNotes  = $('notes').value.trim();
-  const fullName   = $('fullName').value.trim();
-  const phone      = $('phone').value.trim();
-  const email      = $('email').value.trim();
+  const pickup       = $('pickup').value.trim();
+  const dropoff      = $('dropoff').value.trim();
+  const dateISO      = $('date').value;
+  const timeRaw      = $('time').value;
+  const passengers   = $('passengers').value;
+  const luggage      = $('luggage').value;
+  const babySeat     = $('babySeat').checked;
+  const flight       = $('flight').value.trim();
+  const userNotes    = $('notes').value.trim();
+  const specialReqs  = $('specialRequirements').value.trim();
+  const fullName     = $('fullName').value.trim();
+  const phone        = $('phone').value.trim();
+  const email        = $('email').value.trim();
 
   const ref         = generateRef();
   const displayDate = fmtDate(dateISO);
@@ -102,7 +127,8 @@ $('bookingForm').addEventListener('submit', async e => {
     `Drop-off: ${dropoff}`,
     `Luggage: ${luggage}`,
     babySeat ? 'Baby seat: REQUESTED' : null,
-    userNotes ? `Notes: ${userNotes}` : null
+    userNotes ? `Notes: ${userNotes}` : null,
+    specialReqs ? `Special requirements: ${specialReqs}` : null
   ].filter(Boolean).join(' | ');
 
   // ui
@@ -147,7 +173,8 @@ $('bookingForm').addEventListener('submit', async e => {
     'Luggage:     ' + luggage + '\n' +
     'Baby seat:   ' + (babySeat ? 'Requested' : 'Not required') + '\n' +
     'Flight no:   ' + (flight || 'Not provided') + '\n' +
-    (userNotes ? 'Notes:       ' + userNotes + '\n' : '');
+    (userNotes ? 'Notes:       ' + userNotes + '\n' : '') +
+    (specialReqs ? 'Special reqs: ' + specialReqs + '\n' : '');
 
   if (email) {
     try {

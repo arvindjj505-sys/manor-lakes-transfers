@@ -86,7 +86,7 @@
       <h3>Mitsubishi Outlander PHEV GSR</h3>
       <p class="sub">Graphite Grey · Plug-in Hybrid SUV</p>
       <div class="specs">
-        <span class="spec">Seats up to 6</span>
+        <span class="spec">Seats up to 4 passengers</span>
         <span class="spec">Leather interior</span>
         <span class="spec">Climate control</span>
         <span class="spec">Whisper-quiet hybrid</span>
@@ -158,20 +158,20 @@
           <div class="capacity-row">
             <div class="capacity-icon"><i class="bi bi-people-fill"></i></div>
             <div class="capacity-text">
-              <strong>Up to 6 passengers</strong>
-              <span>When travelling light — cabin bags or small items only</span>
+              <strong>Up to 4 passengers</strong>
+              <span>Including children and infants — not counting your driver</span>
             </div>
           </div>
           <div class="capacity-row">
             <div class="capacity-icon"><i class="bi bi-luggage-fill"></i></div>
             <div class="capacity-text">
-              <strong>Up to 4 passengers</strong>
-              <span>When travelling with full-size suitcases (third row folds for luggage)</span>
+              <strong>Up to 4 standard suitcases</strong>
+              <span>Plus carry-on items for everyone aboard</span>
             </div>
           </div>
           <div class="capacity-foot">
-            All passenger counts are in addition to your driver. Not sure which applies?
-            Tell us your luggage on the booking form and we'll confirm.
+            Bigger group or extra luggage? Call <a href="tel:0449188872">0449 188 872</a>
+            before booking and we'll let you know what's possible.
           </div>
         </div>
 
@@ -251,6 +251,13 @@
     </div>
 
     <div class="book-card">
+      <div class="notice-banner">
+        <i class="bi bi-info-circle-fill"></i>
+        <span>Our vehicle comfortably accommodates up to <strong>4 passengers</strong>
+          (including children and infants) with up to <strong>4 standard checked
+          suitcases</strong>. For larger groups or excess luggage, please call us on
+          <a href="tel:0449188872">0449 188 872</a> before booking.</span>
+      </div>
       <form id="bookingForm" novalidate>
 
         <div class="form-grid">
@@ -284,30 +291,42 @@
           <div class="field">
             <label for="passengers">Passengers <span class="req">*</span></label>
             <select id="passengers" name="passengers" required>
+              <option value="" disabled selected>Select passengers</option>
               <option value="1">1 passenger</option>
               <option value="2">2 passengers</option>
               <option value="3">3 passengers</option>
               <option value="4">4 passengers</option>
-              <option value="5">5 passengers</option>
-              <option value="6">6 passengers</option>
             </select>
+            <span class="error-msg">Please select the number of passengers.</span>
+            <div id="passengerWarning" class="warn-banner hidden">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <span>Our vehicle seats a maximum of 4 passengers including children.
+                Please call <a href="tel:0449188872">0449 188 872</a> for group bookings.</span>
+            </div>
           </div>
 
           <div class="field">
             <label for="luggage">Luggage <span class="req">*</span></label>
             <select id="luggage" name="luggage" required>
-              <option value="None / cabin bags only">None / cabin bags only</option>
-              <option value="1–2 suitcases">1–2 suitcases</option>
-              <option value="3–4 suitcases">3–4 suitcases</option>
-              <option value="5+ suitcases">5+ suitcases</option>
+              <option value="1 bag">1 bag</option>
+              <option value="2 bags">2 bags</option>
+              <option value="3 bags">3 bags</option>
+              <option value="4 bags">4 bags</option>
+              <option value="5+ bags">5+ bags</option>
             </select>
+            <div id="luggageWarning" class="warn-banner hidden">
+              <i class="bi bi-exclamation-triangle-fill"></i>
+              <span>This exceeds our standard luggage capacity. Please call us on
+                <a href="tel:0449188872">0449 188 872</a> before completing your booking to
+                confirm we can accommodate your luggage.</span>
+            </div>
           </div>
 
           <div class="field field--full">
-            <div id="capacityHint" class="capacity-hint hidden">
-              <i class="bi bi-exclamation-circle-fill"></i>
-              <span>With full luggage, this vehicle comfortably seats <strong>up to 4 passengers</strong>.
-                We'll be in touch to confirm the best arrangement for your group.</span>
+            <div id="fullCapacityNotice" class="capacity-hint hidden">
+              <i class="bi bi-info-circle-fill"></i>
+              <span>Your booking is at full vehicle capacity. We'll review and contact you
+                within 2 hours to confirm everything fits comfortably.</span>
             </div>
           </div>
 
@@ -319,6 +338,12 @@
                 <span>Fitted and ready before pickup, at no extra charge. Tell us the age in the notes.</span>
               </span>
             </label>
+            <span class="hint">The child or infant requiring this seat must be included in
+              your passenger count above.</span>
+            <div id="babySeatWarning" class="inline-error hidden">
+              <i class="bi bi-exclamation-circle-fill"></i>
+              <span>Please include the child or infant in your passenger count above.</span>
+            </div>
           </div>
 
           <div class="field">
@@ -350,6 +375,14 @@
           <div class="field field--full">
             <label for="email">Email <span style="font-weight:400;color:var(--muted)">(optional — for your confirmation copy)</span></label>
             <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com">
+          </div>
+
+          <div class="field field--full">
+            <label for="specialRequirements">Special requirements or travelling with extra items?
+              <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+            <textarea id="specialRequirements" name="specialRequirements" rows="3" maxlength="300"
+                      placeholder="E.g. wheelchair, oversized luggage, golf bags, pram — let us know and we'll confirm availability before your trip."></textarea>
+            <span class="hint">Max 300 characters</span>
           </div>
         </div>
 
@@ -398,7 +431,7 @@
       <div class="feature">
         <i class="bi bi-people"></i>
         <h3>Built for families &amp; groups</h3>
-        <p>Six seats for light travel, or four with full luggage — clearly explained, no surprises.</p>
+        <p>Seats up to 4 passengers, including children and infants, with room for up to 4 suitcases — no surprises.</p>
       </div>
       <div class="feature">
         <i class="bi bi-phone"></i>
@@ -480,15 +513,16 @@
     <div class="faq">
       <details class="faq-item" open>
         <summary>How many passengers can travel?</summary>
-        <p>The Outlander seats up to <strong>6 passengers</strong> (plus your driver) when
-          luggage is limited to cabin bags. With full-size suitcases the third row folds down
-          for boot space, so the comfortable maximum is <strong>4 passengers</strong>.</p>
+        <p>Our vehicle comfortably seats up to <strong>4 passengers</strong> — including
+          children and infants — in addition to your driver. For larger groups, please call
+          us on <a href="tel:0449188872">0449 188 872</a> to discuss your options.</p>
       </details>
       <details class="faq-item">
         <summary>Can I bring luggage?</summary>
-        <p>Absolutely. Tell us how many bags on the booking form and we'll confirm the right
-          seating layout. As a guide: full luggage (3+ large cases) means up to 4 passengers;
-          light luggage means up to 6.</p>
+        <p>Yes — we can fit up to <strong>4 standard checked suitcases</strong>, plus carry-on
+          items. Travelling with more, or with oversized items? Call us on
+          <a href="tel:0449188872">0449 188 872</a> before booking and we'll confirm we can fit
+          everything in.</p>
       </details>
       <details class="faq-item">
         <summary>Are baby seats available?</summary>
